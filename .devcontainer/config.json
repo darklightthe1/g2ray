@@ -2,6 +2,20 @@
   "log": {
     "loglevel": "warning"
   },
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "1.0.0.1",
+      {
+        "address": "https://1.1.1.1/dns-query",
+        "domains": [
+          "geosite:google",
+          "geosite:cloudflare"
+        ]
+      }
+    ],
+    "queryStrategy": "UseIP"
+  },
   "inbounds": [
     {
       "tag": "vless-in",
@@ -22,6 +36,15 @@
           "mode": "packet-up",
           "path": "/"
         }
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ],
+        "metadataOnly": false
       }
     }
   ],
@@ -29,7 +52,38 @@
     {
       "tag": "direct",
       "protocol": "freedom",
-      "settings": {}
+      "settings": {
+        "domainStrategy": "UseIP"
+      }
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole",
+      "settings": {
+        "response": {
+          "type": "http"
+        }
+      }
     }
-  ]
+  ],
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+      {
+        "type": "field",
+        "outboundTag": "block",
+        "domain": [
+          "geosite:category-ads-all",
+          "geosite:category-ads",
+          "geosite:amazon-ads",
+          "geosite:google-ads"
+        ]
+      },
+      {
+        "type": "field",
+        "outboundTag": "direct",
+        "network": "tcp,udp"
+      }
+    ]
+  }
 }
