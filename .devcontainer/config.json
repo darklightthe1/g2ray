@@ -2,25 +2,17 @@
   "log": {
     "loglevel": "warning"
   },
-"dns": {
+  "dns": {
     "servers": [
+      "1.1.1.1",
+      "1.0.0.1",
       {
-        "address": "https://dns.adguard-dns.com/dns-query",
+        "address": "https://1.1.1.1/dns-query",
         "domains": [
-          "geosite:category-ads-all",
           "geosite:google",
           "geosite:cloudflare"
         ]
-      },
-      {
-        "address": "https://94.140.14.14/dns-query",
-        "domains": [
-          "geosite:category-ads-all"
-        ]
-      },
-      "94.140.14.14",
-      "94.140.15.15",
-      "1.1.1.1"
+      }
     ],
     "queryStrategy": "UseIP"
   },
@@ -77,78 +69,6 @@
   "routing": {
     "domainStrategy": "IPIfNonMatch",
     "rules": [
-      {
-        "type": "field",
-        "outboundTag": "block",
-        "domain": [
-          "domain:doubleclick.net",
-          "domain:googleads.g.doubleclick.net",
-          "domain:pagead2.googlesyndication.com",
-          "domain:tpc.googlesyndication.com",
-          "domain:ad.doubleclick.net",
-          "domain:static.doubleclick.net",
-          "domain:yt3.ggpht.com",
-          "domain:imasdk.googleapis.com",
-          "domain:ad.youtube.com",
-          "domain:ads.youtube.com",
-          "domain:youtube-nocookie.com",
-          "domain:googleadservices.com",
-          "domain:googlesyndication.com",
-          "domain:google-analytics.com",
-          "domain:googletagservices.com",
-          "domain:googletagmanager.com",
-          "domain:googleoptimize.com",
-          "geosite:category-ads-all",
-          "domain:doubleclick.net",
-          "domain:googleadservices.com",
-          "domain:googlesyndication.com",
-          "domain:google-analytics.com",
-          "domain:googletagservices.com",
-          "domain:googletagmanager.com",
-          "domain:googleoptimize.com",
-          "domain:imasdk.googleapis.com",
-          "domain:ad.youtube.com",
-          "domain:ads.youtube.com",
-          "domain:youtube-nocookie.com",
-          "domain:pagead2.googlesyndication.com",
-          "domain:tpc.googlesyndication.com",
-          "domain:yt3.ggpht.com",
-          "domain:static.doubleclick.net",
-          "domain:ad.doubleclick.net",
-          "domain:adservice.google.com",
-          "domain:adservice.google.com.vn",
-          "domain:admob.com",
-          "domain:googleadapis.com",
-          "domain:adsystem.com",
-          "domain:adwords.google.com",
-          "domain:advertising.com",
-          "domain:ads.pubmatic.com",
-          "domain:ads.rubiconproject.com",
-          "domain:ads.openx.net",
-          "domain:ads.yahoo.com",
-          "domain:ads2.opensubtitles.org",
-          "domain:amazon-adsystem.com",
-          "domain:adbrite.com",
-          "domain:adnxs.com",
-          "domain:adsafeprotected.com",
-          "domain:adtechus.com",
-          "domain:advertising.apple.com",
-          "domain:criteo.com",
-          "domain:taboola.com",
-          "domain:outbrain.com",
-          "domain:revcontent.com",
-          "domain:mgid.com",
-          "domain:bidswitch.net",
-          "domain:contextweb.com",
-          "domain:casalemedia.com",
-          "domain:smartadserver.com",
-          "domain:appnexus.com",
-          "domain:mathtag.com",
-          "domain:moatads.com",
-          "domain:rlcdn.com",
-          "domain:scorecardresearch.com",
-        ]
-      },
       {
         "type": "field",
         "outboundTag": "block",
