@@ -73,6 +73,29 @@
         "type": "field",
         "outboundTag": "block",
         "domain": [
+          "domain:doubleclick.net",
+          "domain:googleads.g.doubleclick.net",
+          "domain:pagead2.googlesyndication.com",
+          "domain:tpc.googlesyndication.com",
+          "domain:ad.doubleclick.net",
+          "domain:static.doubleclick.net",
+          "domain:yt3.ggpht.com",
+          "domain:imasdk.googleapis.com",
+          "domain:ad.youtube.com",
+          "domain:ads.youtube.com",
+          "domain:youtube-nocookie.com",
+          "domain:googleadservices.com",
+          "domain:googlesyndication.com",
+          "domain:google-analytics.com",
+          "domain:googletagservices.com",
+          "domain:googletagmanager.com",
+          "domain:googleoptimize.com"
+        ]
+      },
+      {
+        "type": "field",
+        "outboundTag": "block",
+        "domain": [
           "geosite:category-ads-all"
         ]
       },
