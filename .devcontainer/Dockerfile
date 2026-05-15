@@ -14,7 +14,7 @@ RUN apt-get update \
     && rm /tmp/setup.sh
 
 # Download Enhanced Geosite and GeoIP data files (Loyalsoldier)
-RUN curl -sL https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat -o /usr/local/bin/geosite.dat \\
+RUN curl -sL https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat -o /usr/local/bin/geosite.dat \
     && curl -sL https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat -o /usr/local/bin/geoip.dat
 
 # Fixed connection string script
