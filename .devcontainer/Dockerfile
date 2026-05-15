@@ -5,12 +5,12 @@ ENV XRAY_VERSION=v26.3.27
 COPY setup.sh /tmp/setup.sh
 COPY config.json /etc/xray/g2ray.json
 
-RUN apt-get update \\
-    && apt-get install -y --no-install-recommends \\
-       bash curl wget unzip ca-certificates openssl \\
-    && rm -rf /var/lib/apt/lists/* \\
-    && chmod +x /tmp/setup.sh \\
-    && /tmp/setup.sh \\
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+       bash curl wget unzip ca-certificates openssl \
+    && rm -rf /var/lib/apt/lists/* \
+    && chmod +x /tmp/setup.sh \
+    && /tmp/setup.sh \
     && rm /tmp/setup.sh
 
 # Download Enhanced Geosite and GeoIP data files (Loyalsoldier)
